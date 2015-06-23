@@ -61,15 +61,3 @@ public:
 		}
 	}
 };
-
-int main()
-{
-	LRUCache *test = new  LRUCache(2);
-	test->set(2, 1);
-	test->set(2, 2);
-	cout << test->get(2) << endl;
-	test->set(1, 1);
-	test->set(4, 1);
-	cout << test->get(2) << endl;
-	return 0;
-}

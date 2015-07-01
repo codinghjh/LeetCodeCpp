@@ -84,16 +84,3 @@ public:
 		}
 	}
 };
-
-int main()
-{
-	TreeNode* root=new TreeNode(2);
-	TreeNode* t1 = new TreeNode(1);
-	TreeNode* t2 = new TreeNode(3);
-	root->right = t2;
-	root->left = t1;
-	BSTIterator bs(root);
-	while (bs.hasNext())
-		cout << bs.next() << endl;
-	return 0;
-}

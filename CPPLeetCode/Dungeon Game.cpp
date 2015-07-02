@@ -28,17 +28,3 @@ int calculateMinimumHP(vector<vector<int>>& dungeon) {
 	}
 	return 1 + dungeon[0][0];
 }
-
-int main()
-{
-	vector<vector<int>> a;
-
-	vector<int> v1 = { -2, -3, 3 };
-	vector<int> v2 = { -5, -10, 1 };
-	vector<int> v3 = { 10, 30, -5 };
-	a.push_back(v1);
-	a.push_back(v2);
-	a.push_back(v3);
-	cout<<calculateMinimumHP(a);
-	return 0;
-}

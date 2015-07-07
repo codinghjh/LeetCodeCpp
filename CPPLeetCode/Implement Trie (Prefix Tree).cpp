@@ -86,6 +86,7 @@ private:
 	TrieNode* root;
 };
 
+/*
 int main()
 {
 	Trie t;
@@ -98,3 +99,4 @@ int main()
 	cout << boolalpha << t.search("ab");
 	return 0;
 }
+*/

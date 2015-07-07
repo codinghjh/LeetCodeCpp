@@ -68,6 +68,7 @@ vector<int> findOrder(int numCourses, vector<pair<int, int>>& prerequisites) {
 	}
 }
 
+/*
 int main()
 {
 	int numcourses = 4;
@@ -82,3 +83,4 @@ int main()
 	cout << endl;
 	return 0;
 }
+*/

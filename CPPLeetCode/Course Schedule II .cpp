@@ -1,13 +1,19 @@
 #include <iostream>
-#include <unordered_map>
+#include <vector>
 #include <stack>
-#include "Solutions.h"
+#include <unordered_map>
 
 using namespace std;
 
-bool canFinish(int numCourses, vector<pair<int, int>>& prerequisites) {
-	if (numCourses <= 1)
-		return true;
+vector<int> findOrder(int numCourses, vector<pair<int, int>>& prerequisites) {
+	vector<int> result;
+	if (numCourses <= 0)
+		return result;
+	if (numCourses == 1)
+	{
+		result.push_back(0);
+		return result;
+	}
 	unordered_map<int, vector<int>> map;
 	vector<int> du(numCourses, 0);
 	stack<int> zeros;
@@ -30,6 +36,7 @@ bool canFinish(int numCourses, vector<pair<int, int>>& prerequisites) {
 	{
 		if (du[i] == 0)
 		{
+			result.push_back(i);
 			zeros.push(i);
 		}
 	}
@@ -45,11 +52,33 @@ bool canFinish(int numCourses, vector<pair<int, int>>& prerequisites) {
 			if (du[zv[i]] != 0)
 				du[zv[i]]--;
 			if (du[zv[i]] == 0)
+			{
 				zeros.push(zv[i]);
+				result.push_back(zv[i]);
+			}
+				
 		}
 	}
-	for (auto i = 0; i != du.size(); i++)
-		if (du[i] != 0)
-			return false;
-	return true;
+	if (result.size() == numCourses)
+		return result;
+	else
+	{
+		result.clear();
+		return result;
+	}
+}
+
+int main()
+{
+	int numcourses = 4;
+	vector<pair<int, int>> v;
+	v.push_back(pair<int, int>(1, 0));
+	v.push_back(pair<int, int>(2, 0));
+	v.push_back(pair<int, int>(3, 1));
+	v.push_back(pair<int, int>(3, 2));
+	vector<int> re = findOrder(numcourses, v);
+	for (auto i = 0; i != re.size(); i++)
+		cout << re[i] << " ";
+	cout << endl;
+	return 0;
 }

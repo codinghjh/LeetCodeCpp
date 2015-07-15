@@ -25,10 +25,3 @@ string shortestPalindrome(string s) {
 	}
 	return re.substr(0, s.length() - p[t.size() - 1])+s;
 }
-
-int main()
-{
-	string s = "aacecaaa";
-	cout << shortestPalindrome(s) << endl;
-	return 0;
-}

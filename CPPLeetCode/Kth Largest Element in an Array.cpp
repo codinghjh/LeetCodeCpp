@@ -49,12 +49,3 @@ int findKthLargest(vector<int>& nums, int k) {
 	}
 	return nums[0];
 }
-
-int main()
-{
-	vector<int> nums = { 3, 2, 1, 5, 6, 4 };
-	int k = 2;
-	cout << findKthLargest(nums, k);
-	cout << endl;
-	return 0;
-}

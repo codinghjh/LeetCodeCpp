@@ -45,12 +45,3 @@ int maximalSquare(vector<vector<char>>& matrix) {
 	}
 	return maxSize*maxSize;
 }
-
-int main()
-{
-	vector<char> v1 = { '0' };
-	vector<vector<char>> v;
-	v.push_back(v1);
-	cout << maximalSquare(v) << endl;
-	return 0;
-}
